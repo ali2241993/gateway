@@ -11,11 +11,11 @@ class PurchaseMobile extends Controller{
                 'clientId'               => 'required|string',
                 'terminalId'             => 'required|string',
                 'tranDateTime'           => 'required|string',
-                'mobileNo'               => 'required|string', 
                 'systemTraceAuditNumber' => 'required|integer',
                 'PIN'                    => 'required|string',
-                'tranCurrencyCode'       => 'required|string',
-                'tranAmount'             => 'required|double',
+                'mobileNo'               => '', 
+                'tranCurrencyCode'       => 'required|string|digit:3',
+                'tranAmount'             => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
                 'checkDuplicate'         => 'required|boolean',
             ]);
             if ($validator->fails()){

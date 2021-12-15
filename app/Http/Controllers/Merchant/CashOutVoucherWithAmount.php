@@ -15,7 +15,7 @@ class CashOutVoucherWithAmount extends Controller{
                 'systemTraceAuditNumber' => 'required|integer',
                 'phoneNumber'            => '',
                 'voucherNumber'          => '',
-                'tranAmount'             => 'required|double'
+                'tranAmount'             => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
             ]);
             if ($validator->fails()){
                 return $this->sendError(102,'invalidData',$validator->errors());

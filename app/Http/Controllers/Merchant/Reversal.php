@@ -13,12 +13,11 @@ class Reversal extends Controller{
                 'terminalId'                         => 'required|string',
                 'tranDateTime'                       => 'required|string',
                 'systemTraceAuditNumber'             => 'required|integer',
-                'PAN'                                => 'required|string',
+                'PAN'                                => 'required|string|regex:[0-9]?',
                 'expDate'                            => 'required|string',
                 'originalTranSystemTraceAuditNumber' => '',
                 'serviceId'                          => '',
-                'checkDuplicate'         => 'required|boolean',
-
+                'checkDuplicate'                     => 'required|boolean',
             ]);
             if ($validator->fails()){
                 return $this->sendError(102,'invalidData',$validator->errors());

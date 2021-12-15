@@ -13,17 +13,14 @@ class VoucherCashIn extends Controller{
                 'terminalId'             => 'required|string',
                 'tranDateTime'           => 'required|string',
                 'systemTraceAuditNumber' => 'required|integer',
-                'PAN'                    => 'required|string',
+                'PAN'                    => 'required|string|regex:[0-9]?',
                 'PIN'                    => 'required|string',
                 'expDate'                => 'required|string',
                 'voucherNumber'          => '',
                 'approvalCode'           => '',
-                'tranCurrencyCode'       => 'required|string',
-                'tranAmount'             => 'required|double',
-                'track2'                 => 'required|string',
-
-
-
+                'tranCurrencyCode'       => 'required|string|digit:3',
+                'tranAmount'             => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
+                'track2'                 => 'required|string|min:33|max:37',
             ]);
             if ($validator->fails()){
                 return $this->sendError(102,'invalidData',$validator->errors());

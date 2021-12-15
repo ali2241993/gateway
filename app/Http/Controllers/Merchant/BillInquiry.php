@@ -13,13 +13,13 @@ class BillInquiry extends Controller{
                 'terminalId'             => 'required|string',
                 'tranDateTime'           => 'required|string',
                 'systemTraceAuditNumber' => 'required|integer',
-                'PAN'                    => 'required|string',
+                'PAN'                    => 'required|string|regex:[0-9]?',
                 'PIN'                    => 'required|string',
                 'expDate'                => 'required|string',
                 'personalPaymentInfo'    => '',
                 'payeeId'                => '',
-                'tranCurrencyCode'       => 'required|string',
-                'track2'                 => 'required|string',
+                'tranCurrencyCode'       => 'required|string|digit:3',
+                'track2'                 => 'required|string|min:33|max:37',
                 'tranAuthenticationType' => 'required|string',
             ]);
             if ($validator->fails()){

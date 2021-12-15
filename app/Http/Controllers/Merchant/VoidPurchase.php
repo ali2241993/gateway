@@ -13,7 +13,7 @@ class VoidPurchase extends Controller{
                 'terminalId'                         => 'required|string',
                 'tranDateTime'                       => 'required|string',
                 'systemTraceAuditNumber'             => 'required|integer',
-                'PAN'                                => 'required|string',
+                'PAN'                                => 'required|string|regex:[0-9]?',
                 'expDate'                            => 'required|string',
                 'originalTranSystemTraceAuditNumber' => '',
                 'originalTranReferenceNumber'        => '',

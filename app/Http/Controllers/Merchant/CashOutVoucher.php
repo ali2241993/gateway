@@ -14,7 +14,7 @@ class CashOutVoucher extends Controller{
                 'tranDateTime'           => 'required|string',
                 'systemTraceAuditNumber' => 'required|integer',
                 'phoneNumber'            => '',
-                'voucherNumber'          => '',
+                'voucherNumber'          => ''
             ]);
             if ($validator->fails()){
                 return $this->sendError(102,'invalidData',$validator->errors());
