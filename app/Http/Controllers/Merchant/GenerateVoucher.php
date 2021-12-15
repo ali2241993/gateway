@@ -18,7 +18,7 @@ class GenerateVoucher extends Controller{
                 'expDate'                => 'required|string',
                 'tranCurrencyCode'       => 'required|string|digit:3',
                 'tranAmount'             => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-                'phoneNumber'            => '',
+                'phoneNumber'            => 'required|string|regex:[0-9]?',
                 'track2'                 => 'required|string|min:33|max:37',
                 'checkDuplicate'         => 'required|boolean',
                 'tranAuthenticationType' => 'required|string',

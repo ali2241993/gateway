@@ -16,7 +16,7 @@ class PinChange extends Controller{
                 'PAN'                    => 'required|string|regex:[0-9]?',
                 'PIN'                    => 'required|string',
                 'expDate'                => 'required|string',
-                'newPIN'                 => '',
+                'newPIN'                 => 'required|string',
                 'track2'                 => 'required|string|min:33|max:37',
             ]);
             if ($validator->fails()){

@@ -12,7 +12,7 @@ class PayeesList extends Controller{
                 'clientId'               => 'required|string',
                 'terminalId'             => 'required|string',
                 'tranDateTime'           => 'required|string',
-                'systemTraceAuditNumber' => 'required|integer'
+                'systemTraceAuditNumber' => 'required|integer',
             ]);
             if ($validator->fails()){
                 return $this->sendError(102,'invalidData',$validator->errors());

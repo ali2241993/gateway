@@ -15,8 +15,8 @@ class Reversal extends Controller{
                 'systemTraceAuditNumber'             => 'required|integer',
                 'PAN'                                => 'required|string|regex:[0-9]?',
                 'expDate'                            => 'required|string',
-                'originalTranSystemTraceAuditNumber' => '',
-                'serviceId'                          => '',
+                'originalTranSystemTraceAuditNumber' => 'required|numeric',
+                'serviceId'                          => 'required|string|max:3',
                 'checkDuplicate'                     => 'required|boolean',
             ]);
             if ($validator->fails()){

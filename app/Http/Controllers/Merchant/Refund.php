@@ -19,7 +19,7 @@ class Refund extends Controller{
                 'tranCurrencyCode'       => 'required|string|digit:3',
                 'tranAmount'             => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
                 'track2'                 => 'required|string|min:33|max:37',
-                'checkDuplicate'         => 'required|boolean'
+                'checkDuplicate'         => 'required|boolean',
             ]);
             if ($validator->fails()){
                 return $this->sendError(102,'invalidData',$validator->errors());

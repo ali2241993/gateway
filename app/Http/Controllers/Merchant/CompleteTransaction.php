@@ -13,7 +13,7 @@ class CompleteTransaction extends Controller{
                 'terminalId'             => 'required|string',
                 'tranDateTime'           => 'required|string',
                 'systemTraceAuditNumber' => 'required|integer',
-                'otp'                    => '',
+                'otp'                    => 'required|string',
 
             ]);
             if ($validator->fails()){

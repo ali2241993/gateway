@@ -13,7 +13,7 @@ class PurchaseMobile extends Controller{
                 'tranDateTime'           => 'required|string',
                 'systemTraceAuditNumber' => 'required|integer',
                 'PIN'                    => 'required|string',
-                'mobileNo'               => '', 
+                'mobileNo'               => 'required|string', 
                 'tranCurrencyCode'       => 'required|string|digit:3',
                 'tranAmount'             => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
                 'checkDuplicate'         => 'required|boolean',

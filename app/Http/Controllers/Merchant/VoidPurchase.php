@@ -15,8 +15,8 @@ class VoidPurchase extends Controller{
                 'systemTraceAuditNumber'             => 'required|integer',
                 'PAN'                                => 'required|string|regex:[0-9]?',
                 'expDate'                            => 'required|string',
-                'originalTranSystemTraceAuditNumber' => '',
-                'originalTranReferenceNumber'        => '',
+                'originalTranSystemTraceAuditNumber' => 'required|numeric',
+                'originalTranReferenceNumber'        => 'required|numeric',
                 'checkDuplicate'                     => 'required|boolean',
             ]);
             if ($validator->fails()){
